@@ -22,7 +22,7 @@ The dataset is heavily imbalanced: ~88% of observations are `NORAIN`.
 
 1. **Feature engineering** — Extracted hour, day-of-week, and date from the prediction timestamp. Dropped columns that were mostly NaN (`time_observed`, `indicator_description`) or not informative (`confidence`, `predicted_intensity`).
 2. **Preprocessing** — Median imputation for numeric features, most-frequent imputation + one-hot encoding for categorical features, all within an sklearn `Pipeline`.
-3. **Model** — CatBoost classifier with default hyperparameters.
+3. **Model** — Random Forest classifier (300 estimators).
 4. **Validation** — 5-fold stratified cross-validation to preserve class balance.
 
 ## Results
@@ -48,4 +48,3 @@ The dataset is heavily imbalanced: ~88% of observations are `NORAIN`.
 
 - pandas, numpy, matplotlib
 - scikit-learn
-- catboost
